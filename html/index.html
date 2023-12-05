@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        function submitSearch(isLucky) {
+            var form = document.getElementById('searchForm');
+            var input = document.getElementById('btnI');
+
+            if (isLucky) {
+                // Set the form research with "I'm Feeling Lucky"
+                form.action = "https://www.google.com/search";
+                input.name = 'btnI';  // Activate "I'm Feeling Lucky"
+                input.value = "I'm Feeling Lucky";
+            } else {
+                // Set the form research with Google
+                form.action = "https://www.google.com/search";
+                input.name = '';  // Disable "I'm Feeling Lucky"
+                input.value = "";
+            }
+
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+    <form id="searchForm" action="https://www.google.com/search">
+        <input type="text" name="q">
+        <input type="hidden" id="btnI">
+
+        <input type="button" value="Google Search" onclick="submitSearch(false)">
+        <input type="button" value="I'm Feeling Lucky" onclick="submitSearch(true)">
+    </form>
+
+<div class="top-right-links">
+    <a href="image.html">Go to Image Search</a>
+    <a href="advanced.html">Advanced Search</a>
+</div>
+
+</body>
+</html>
